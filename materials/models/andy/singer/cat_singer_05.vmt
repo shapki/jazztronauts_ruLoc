@@ -1,9 +1,0 @@
-"Patch"
-{
-	include "materials/models/andy/singer/cat_singer_01.vmt"
-	insert
-	{
-		"$detail" "models/andy/singer/singer_blink"
-	}
-
-}

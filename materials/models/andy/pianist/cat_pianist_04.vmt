@@ -1,9 +1,0 @@
-"Patch"
-{
-	include "materials/models/andy/pianist/cat_pianist_01.vmt"
-	insert
-	{
-		"$detail" "models/andy/pianist/pianist_embarassed"
-	}
-
-}
