@@ -1,0 +1,208 @@
+@include "base.fgd"
+@include "halflife2.fgd"
+
+@PointClass base(Targetname) iconsprite("editor/lua_run.vmt") = jazz_dialog : "Runs Dialog"
+[
+	spawnflags(flags) =
+	[
+		1  : "SendToAllPlayers"				: 1
+	]
+
+	script(string)							: "Script" : "" : "Script to run"
+	
+	input Start(void)  : "Starts Dialog"
+
+	output OnPlayerFinished(void) : "Fires when a player has finished with the dialog sequence. The player is the activator"
+	output OnEveryoneFinished(void) : "Fires when everyone has finished playing this sequence."
+	
+]
+
+@PointClass base(Targetname, Origin, Angles) studioprop() = jazz_door : "Door to teleport players between locations"
+[
+	teleportentity(target_destination) : "Teleport To" : : "The name of the teleport entity." 
+	opendoorsound(sound) : "Door Open sound" : : "The sound the door will make when it opens."
+	closedoorsound(sound) : "Door Close sound" : : "The sound the door will make when it closes."
+	lockdoorsound(sound) : "Door Locked sound" : : "The sound the door will make when it's locked(Or attempted at)."
+	unlockdoorsound(sound) : "Door Unlocked sound" : : "The sound the door will make when it's unlocked."
+	loadingscreen(string) : "Loading Screen" : : "Overrides the random loading screen"
+	startlocked(integer) : "Start Locked" : 0 : "Whether or not this door should start locked"
+	
+	output OnTeleport(void) : "Fires on Teleport"
+	output OnUnlock(void) : "Fires when the door is unlocked"
+	output OnUse(void) : "Fires when an Entity uses this"
+	output OnUseLocked(void) : "Fires when an Entity uses this while we're locked"
+	
+	input Teleport(void) : "Teleport the activator"
+	input Unlock(void) : "Unlock the door"
+	input Lock(void) : "Lock the door"
+]
+
+@PointClass base(Targetname, Origin, Angles) studioprop() = jazz_door_eclipse : "False door that acts as a waypoint for eclipse cat encounters"
+[
+
+]
+
+
+@PointClass base(Targetname) iconsprite("editor/env_shooter.vmt") = jazz_hub_propvomiter : "Prop Poop Chute"
+[
+	output OnVomitEnd(void) : "Fires when props are finished vomiting"
+	output OnVomitStart(void) : "Fires when there has been a successful pull of the lever. "
+	output OnVomitStartEmpty(void) : "Fires when there has been a successful pull of the lever, but the player had no props."
+
+	input Vomit(void)  : "Begin vomiting props"
+]
+
+@PointClass base(Targetname) iconsprite("editor/env_shooter.vmt") = jazz_hub_propvomiter_dummy : "Prop Poop Chute - Ending 1"
+[
+	output OnVomitEnd(void) : "Fires when props are finished vomiting"
+	output OnVomitStart(void) : "Fires when there has been a successful pull of the lever. "
+	output OnVomitStartEmpty(void) : "Fires when there has been a successful pull of the lever, but the player had no props."
+
+	input Vomit(void)  : "Begin vomiting props"
+	input StopVomit(void)  : "Stop vomiting props"
+]
+
+
+@PointClass base(Targetname, Origin, Angles) studioprop("models/sunabouzu/jazzbigtv.mdl") = jazz_hub_browser : "Jazz Addon Browser"
+[
+	output OnMapRolled(void) : "Fires when a map has been successfully rolled"
+	output OnAddonSelected(void) : "Fires when an addon has been selected and we should switch modes"
+
+	input RollAddon(void)  : "Perform a random roll for the next addon"
+	input SelectCurrentAddon(void)  : "Select the current addon, switching modes."
+	input TurnOn(void) 	   : "Turn on the tv, allowing it to receive input to change the channel"
+	input TurnOff(void)    : "Turn off the tv, blocking any channel change inputs."
+]
+
+@PointClass base(Targetname, Origin, Angles) studioprop("models/sunabouzu/jazz_tv02.mdl") = jazz_hub_selector : "Jazz Map Selector"
+[
+	output OnMapSelected(void) : "Fires when a map has been selected and is starting the download process."
+	output OnMapDownloaded(integer) : "Fires when a map has finished downloading and is ready to be analyzed. 1 means successful, 0 means failure."
+	output OnMapAnalyzed(void) : "Fires when a map has finished being analyzed and facts have been extracted."
+
+	input SelectAddon(void)  : "Select the currently-browsed addon. Begins downloading and mounting the map"
+	input CancelAddon(void)  : "Turn off the selector, switching off all the fact screens."
+]
+
+@PointClass base(Targetname, Origin, Angles) studioprop("models/andy/bartender/cat_bartender.mdl") = jazz_cat : "Jazz Cat"
+[
+    npcid(choices) : "Cat Character" : "1" =
+    [
+        1 : "Bartender" 
+        2 : "Singer" 
+        3 : "Pianist" 
+		4 : "Chello"
+    ]
+
+	idleanim(string) : "Idle Animation" : : "Overrides the default idle animation"
+]
+
+@PointClass base(Targetname) iconsprite("editor/env_shooter.vmt") = jazz_hub_propleaderboard : "Prop Leaderboard"
+[
+	leaderboardid(choices) : "Leaderboard Type" : "1" =
+    [
+        1 : "All Time" 
+        2 : "Redeemed Current Map" 
+        3 : "Total Unredeemed" 
+    ]
+]
+
+@PointClass base(Targetname, Origin, Angles) studioprop("models/sunabouzu/shard_tank.mdl") = jazz_shardtank : "Jazz Shard Tank"
+[
+
+]
+
+@PointClass base(Targetname) iconsprite("editor/env_shooter.vmt") = jazz_checkpoint : "Jazz Player Checkpoint"
+[
+	TeleportRadius(integer) : "Teleport Radius": 0 : "Radius around the origin to randomly pepper in players"
+
+	input MovePlayers(void)  : "Moves players to this entity's origin"
+]
+
+@SolidClass base(Targetname, Origin, Angles) = jazz_trigger_group : "Jazz Group Trigger"
+[
+	output OnEveryoneInside(void) : "Fires when everybody is within the trigger."
+	output OnEveryoneNotInside(void) : "Fires when no longer everybody is in the trigger"
+
+	output OnInsideEmpty(void) : "Fires when NOBODY is within the trigger."
+	output OnInsideNotEmpty(void) : "Fires if we were empty but SOMEBODY entered the trigger."
+
+	output OnPlayerEnter(void) : "Fires when a single player has entered the trigger"
+	output OnPlayerLeave(void) : "Fires when a single player has left the trigger"
+]
+
+@SolidClass base(Targetname, Origin, Angles) = jazz_trigger_theft : "Jazz Brush Theft Trigger"
+[
+	output OnInitialBrushStolen(void) : "Fires the first brush within this trigger has been stolen."
+	output OnBrushStolen(void) : "Fires every single time a brush has been stolen."
+	output OnThresholdHit(void) : "Fires when the threshold of stolen brushes has been hit"
+
+	StealThreshold(integer) : "Steal Threshold": 100 : "Percentage of brushes needed to be stolen for the OnThresholdHit output to fire. (0-100 where 50 is half brushes, 100 is all, etc.)"
+]
+
+
+@PointClass base(Targetname, Origin, Angles) iconsprite("editor/env_shooter.vmt") = jazz_concommand : "Jazz Console Command Executer"
+[
+	Concommand(string)	: "Console Command" : "" : "Command to run on the server."
+	
+	input RunCommand(void)  : "Executes the console command on the server."
+]
+
+@PointClass base(Targetname, Origin, Angles) iconsprite("editor/env_shooter.vmt") = jazz_changelevel : "Jazz Level Changer"
+[
+	level(string)	: "Level Name" : "" : "Which level to change to"
+	
+	input ChangeLevel(void)  : "Changes the current level"
+]
+
+@PointClass base(Targetname, Origin, Angles) studioprop() = jazz_factscreen : "Jazz Random Fact Screen"
+[
+	factname(string) : "Fact Name" : : "Override what fact this will display. Optional"
+]
+
+@PointClass base(Targetname) iconsprite("editor/env_shooter.vmt") = jazz_vote_podiums : "Jazz Vote Podium Circle"
+[
+	ApproachRadius(integer) : "Approach Radius": 500 : "The radius at which the podiums spawn from the ground when a player approaches."
+	PodiumRadius(integer) : "Podium Spawn Radius" : 50 : "How close to the center the podiums spawn in a circle."
+
+	input Reset(void)  : "Reset to our initial, hidden state, removing podiums."
+
+	output OnActivated(void) : "Fires when all players have voted and the podiums sink into the ground"
+	output OnApproached(void) : "Fires when a player enters the activation range, showing our podiums"
+]
+
+@PointClass base(Targetname) size(-8 -8 -8, 8 8 8) = jazz_global : "An entity to control a global game state of jazztronauts."
+[
+	globalstate(choices) : "Global State to Set" : : "The state to set on or off." =
+	[
+		"finished_intro" : "Fresh restart, whether or not they've finished the intro" 
+		"ended" : "Ending has been seen and the game is ready to be restarted for NG+" 
+		"unlocked_encounter" : "If enabled, allows safe travel to the eclipse cat horror apartment. Kicks out otherwise." 
+		"encounter_1" : "Mark that we have done the first encounter with the cat"
+		"encounter_2" : "Mark that we have done the second encounter with the cat"
+		"encounter_3" : "Mark that we have done the third encounter with the cat"
+	]
+
+	// Inputs
+	input TurnOn(void) : "Set state of global to ON."
+	input TurnOff(void) : "Set state of global to OFF."
+]
+
+@PointClass iconsprite("editor/logic_auto.vmt") = jazz_encounter_auto : "Fires outputs when a map spawns, depending on the current state of the encounter cat."
+[
+	// Outputs
+	output OnMapSpawn(integer) : "Fired when map spawns, with the value being which cat encounter to show. 1 is first, 2 is second, 0 is none."
+]
+
+
+@PointClass base(Targetname, Origin, Angles) studioprop() = mediaplayer_tv : "Plays media"
+[
+	output OnMediaStarted(void) : "Fired when media playback begins"
+	output OnQueueEmpty(void) : "Fired when all queued media finishes playing"
+
+	input AddPlayer(void) : "Adds the activator to the list of media listeners"
+	input RemovePlayer(void) : "Removes the activator from the list of media listeners"
+	input RemoveAllPlayers(void) : "Removes all players from the list of media listeners"
+	input PlayPauseMedia(void) : "Toggles the play or pause state of the current media"
+	input ClearMedia(void) : "Clears all queued and active media"
+]

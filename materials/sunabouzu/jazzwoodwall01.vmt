@@ -1,0 +1,11 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "sunabouzu/jazzwoodwall01"
+	"$bumpmap" "sunabouzu/jazzwoodwall01_N"
+	"$surfaceprop" "Wood_Solid"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[ 0.5 0.5 0.5 ]"
+	"$envmapcontrast"	2.2
+	"$envmapsaturation" 1
+	"$normalmapalphaenvmapmask" 1
+}

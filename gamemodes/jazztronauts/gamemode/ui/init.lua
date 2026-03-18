@@ -1,0 +1,12 @@
+include("dialog/init.lua")
+include("radar/init.lua")
+include("transition/init.lua")
+include("propfeed/init.lua")
+include("missions/init.lua")
+include("spawnmenu/init.lua")
+include("store/init.lua")
+include("worldmarker/init.lua")
+include("nametags/init.lua")
+
+AddCSLuaFile( "cl_skin.lua" )
+AddCSLuaFile( "cl_init.lua")

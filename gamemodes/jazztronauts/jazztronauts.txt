@@ -1,0 +1,30 @@
+"jazztronauts"
+{
+	"base"			"sandbox"
+	"title"			"Jazztronauts"
+	"menusystem" 	"1"
+	"maps" 			"jazz_bar"
+	"category"		"pve"
+	"workshopid"	"1452613192"
+
+	"settings"
+	{
+		1
+		{
+			"name"		"jazz_wait_enable"
+			"text"		"#jazz.gamemode.wait"
+			"help"		"#jazz.gamemode.wait.help"
+			"type"		"CheckBox"
+			"default"	"1"
+		}
+
+		2
+		{
+			"name"		"jazz_include_localaddon"
+			"text"		"#jazz.gamemode.localaddons"
+			"help"		"#jazz.gamemode.localaddons.help"
+			"type"		"CheckBox"
+			"default"	"0"
+		}
+	}
+}

@@ -1,0 +1,12 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "sunabouzu/jazzconcretefloor02_A"
+	"$bumpmap" "sunabouzu/jazzconcretefloor02_N"
+	$ssbump 1
+	"$surfaceprop" "Concrete"
+        "$detail" "sunabouzu/jazznoise"
+	"$detailscale" "3"
+	"$detailblendfactor" .3
+	"$detailblendmode" 0
+	"%keywords" "jazz"
+}

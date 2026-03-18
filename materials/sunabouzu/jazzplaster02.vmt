@@ -1,0 +1,18 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "sunabouzu/jazzplaster02_a"
+	"$bumpmap" "sunabouzu/jazzplaster01_n"
+	$ssbump 1
+	"$surfaceprop" "plaster"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" 1
+	"$envmapcontrast" 1.8
+	"$envmapsaturation" .33
+	"$envmaptint" "[ .25 .25 .25 ]"
+	$detail sunabouzu\jazznoise
+	$detailscale 2
+	$detailblendfactor .3
+	$detailblendmode 0
+	"$surfaceprop" "plaster"
+	"%keywords" "jazz"
+}

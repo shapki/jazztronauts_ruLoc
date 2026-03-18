@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials/models/andy/bartender/cat_bartender_01.vmt"
+	insert
+	{
+		"$detail" "models/andy/bartender/bartender_blink"
+	}
+
+}
