@@ -1,82 +1,130 @@
+:root {
+    --gold: #d4af37;
+    --purple: #6a0dad;
+    --pink: #ff69b4;
+    --white: #ffffff;
+    --brown: #4b3621;
+    --glass: rgba(0, 0, 0, 0.6);
+}
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 5%;
-  width: 100%;
-  color: white;
-  text-align: center;
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--brown);
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  -webkit-box-orient: vertical;
-  text-align: center;
+.bg-wrapper {
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background-image: url('bg.png');
+    background-repeat: repeat;
+    background-size: 500px;
+    z-index: -1;
+    animation: spiralMovement 20s linear infinite;
 }
 
-.content {
-  width: 100%;
+@keyframes spiralMovement {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(5%, 2%); }
+    50% { transform: translate(10%, 10%); }
+    75% { transform: translate(2%, 5%); }
+    100% { transform: translate(0, 0); }
 }
 
-.social {
-  font-size: 24px;
-  font-weight: bold;
+.main-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, transparent 20%, rgba(75, 54, 33, 0.8) 100%);
+    color: var(--white);
+    padding: 20px;
 }
 
-.social svg {
-  vertical-align: middle;
+.center-content {
+    text-align: center;
+    background: var(--glass);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(10px);
 }
 
-/* thanks https://www.quackit.com/css/codes/marquees/ */
-
-.marquee {
-  height: 50px;
-  overflow: hidden;
-  position: relative;
+.logo {
+    width: 384px;
+    height: 128px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px var(--pink));
 }
 
-.marquee h1 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  line-height: 50px;
-  text-align: left;
-  -webkit-animation: marquee 5s linear infinite alternate;
-  animation: marquee 5s linear infinite alternate;
+.server-info h1 {
+    margin: 5px 0;
+    font-size: 2.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.spookytitle {
-  color: #bd0000;
-  text-shadow: 2px 2px 20px rgb(0, 0, 0);
+.server-info h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: var(--pink);
+    font-weight: 300;
 }
 
-footer {
-  text-align: center;
+.loading-status {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    text-align: right;
+    background: var(--glass);
+    padding: 15px 25px;
+    border-radius: 10px;
+    border-right: 5px solid var(--purple);
 }
 
-@-webkit-keyframes marquee {
-  0% {
-    -webkit-transform: translateX(70%);
-  }
-  100% {
-    -webkit-transform: translateX(0%);
-  }
+.loading-status span {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--white);
 }
 
-@keyframes marquee {
-  0% {
-    -webkit-transform: translateX(70%);
-  }
-  100% {
-    -webkit-transform: translateX(0%);
-  }
+.loading-status p {
+    margin: 0;
+    font-size: 0.8em;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+
+.credits {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+.credits b {
+    color: var(--gold);
+}
+
+.credits i {
+    color: var(--pink);
 }
