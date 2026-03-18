@@ -362,7 +362,8 @@ surface.CreateFont( "JazzIntermissionCountdown", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = ScreenScale(32),
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 local interMat = Material("materials/ui/jazztronauts/intermission.png", "smooth")

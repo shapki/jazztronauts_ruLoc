@@ -94,7 +94,7 @@ local DialogCallbacks = {}
 
 surface.CreateFont( "JazzDialogNameFont", {
 	font = "KG Shake it Off Chunky",
-	extended = false,
+	extended = true,
 	size = ScreenScale(15),
 	weight = 500,
 	antialias = true,
@@ -102,7 +102,7 @@ surface.CreateFont( "JazzDialogNameFont", {
 
 surface.CreateFont( "JazzDialogFont", {
 	font = "Arial",
-	extended = false,
+	extended = true,
 	size = ScreenScale(15),
 	weight = 500,
 	antialias = true,
@@ -110,7 +110,7 @@ surface.CreateFont( "JazzDialogFont", {
 
 surface.CreateFont( "JazzDialogFontHint", {
 	font = "Arial",
-	extended = false,
+	extended = true,
 	size = ScreenScale(11),
 	weight = 500,
 	antialias = true,
@@ -281,7 +281,7 @@ DialogCallbacks.Paint = function(_dialog)
 	-- If we're waiting on input, slam that down
 	if dialog.ReadyToContinue() then
 		surface.SetFont( "JazzDialogFontHint" )
-		local contstr = "Click to continue...	"
+		local contstr = "Далее...	"
 		local tw,th = surface.GetTextSize(contstr)
 		local contX = x + w/2 - tw //* (localspeaker and 0.2 or 1)
 		if localspeaker then

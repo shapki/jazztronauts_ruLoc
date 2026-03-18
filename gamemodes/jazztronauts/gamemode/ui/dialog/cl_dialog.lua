@@ -478,7 +478,7 @@ end )
 -- Dialog can be asynchronous now, show little throbber if dialog requested before it's loaded
 surface.CreateFont( "JazzDialogLoading", {
 	font = "KG Shake it Off Chunky",
-	extended = false,
+	extended = true,
 	size = ScreenScale(9),
 	weight = 1000,
 	blursize = 0,

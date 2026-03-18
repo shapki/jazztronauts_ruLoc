@@ -5,14 +5,16 @@ surface.CreateFont( "JazzWaitingCountdown", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = ScreenScale(32),
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 surface.CreateFont( "JazzWaitingCountdownPlayer", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = ScreenScale(20),
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 

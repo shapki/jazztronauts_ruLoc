@@ -29,27 +29,31 @@ surface.CreateFont( "JazzNote",
 {
 	font		= "KG Shake it Off Chunky Mono",
 	size		= ScreenScale(20),
-	weight		= 1500
+	weight		= 1500,
+	extended	= true
 })
 surface.CreateFont( "JazzNoteFill",
 {
 	font		= "KG Shake it Off Chunky Mono",
 	size		= ScreenScale(12),
 	weight		= 500,
-	antialias	= true
+	antialias	= true,
+	extended	= true
 })
 surface.CreateFont( "JazzNoteMultiplier",
 {
 	font		= "KG Shake it Off Chunky",
 	size		= ScreenScale(12),
 	weight		= 1500,
-	antialias	= true
+	antialias	= true,
+	extended	= true
 })
 surface.CreateFont( "JazzBlackShard",
 {
 	font		= "Palatino Linotype",
 	size		= ScreenScale(20),
-	weight		= 1500
+	weight		= 1500,
+	extended	= true
 })
 
 local function drawTextRotated(text, font, x, y, color, rotation, maxWidth)

@@ -157,14 +157,16 @@ surface.CreateFont( "JazzMapSelectKey", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = 200,
 	weight	= 500,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 surface.CreateFont( "JazzMapSelectMain", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = 200,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 function ENT:Draw()

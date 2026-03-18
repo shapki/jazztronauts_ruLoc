@@ -11,7 +11,8 @@ surface.CreateFont( "JazzRespawnHint", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = 30,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 local Radius = ScreenScale(25)

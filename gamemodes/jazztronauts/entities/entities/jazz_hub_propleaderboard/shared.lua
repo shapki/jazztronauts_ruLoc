@@ -57,14 +57,16 @@ surface.CreateFont( "JazzLeaderboardEntryFont", {
 	font	  = "Impact",
 	size	  = 60,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 surface.CreateFont( "JazzLeaderboardTitleFont", {
 	font	  = "Impact",
 	size	  = 100,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 function ENT:AddPlayerPanel(id, name, count)

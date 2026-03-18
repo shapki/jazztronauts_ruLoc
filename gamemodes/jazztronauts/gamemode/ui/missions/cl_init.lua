@@ -2,7 +2,7 @@ include("jazz_localize.lua")
 
 surface.CreateFont( "Mission_ProgressPercent", {
 	font = "KG Shake it Off Chunky",
-	extended = false,
+	extended = true,
 	size = ScreenScale(10),
 	weight = 500,
 	blursize = 0,
@@ -20,7 +20,7 @@ surface.CreateFont( "Mission_ProgressPercent", {
 
 surface.CreateFont( "Mission_Description", {
 	font = "Verdana",
-	extended = false,
+	extended = true,
 	size = ScreenScale(7),
 	weight = 1000,
 	blursize = 0,

@@ -90,7 +90,7 @@ else
 
 	surface.CreateFont( "JazzShardTankFont", {
 		font = "KG Shake it Off Chunky",
-		extended = false,
+		extended = true,
 		size = 65,
 		weight = 500,
 		antialias = true,
@@ -98,7 +98,7 @@ else
 
 	surface.CreateFont( "JazzShardTankSubtextFont", {
 		font = "KG Shake it Off Chunky",
-		extended = false,
+		extended = true,
 		size = 25,
 		weight = 500,
 		antialias = true,

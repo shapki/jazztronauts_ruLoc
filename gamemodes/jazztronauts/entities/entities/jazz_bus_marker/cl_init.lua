@@ -7,7 +7,8 @@ surface.CreateFont( "JazzMouseHint", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = ScreenScale(8),
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 ENT.SpawnScale = 0

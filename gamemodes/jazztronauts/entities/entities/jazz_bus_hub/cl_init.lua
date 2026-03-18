@@ -14,21 +14,24 @@ surface.CreateFont( "SteamCommentFont", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = 70,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 surface.CreateFont( "SteamAuthorFont", {
 	font	  = "Dancing Script",
 	size	  = 65,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 surface.CreateFont( "JazzDestinationFont", {
 	font	  = "Dancing Script",
 	size	  = 53,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 local destRTWidth = 256

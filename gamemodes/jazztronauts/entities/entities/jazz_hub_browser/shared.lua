@@ -156,7 +156,8 @@ surface.CreateFont( "JazzTVChannel", {
 	//antialias = true,
 	additive  = false,
 	blursize  = 1,
-	scanlines = 3
+	scanlines = 3,
+	extended = true
 })
 
 

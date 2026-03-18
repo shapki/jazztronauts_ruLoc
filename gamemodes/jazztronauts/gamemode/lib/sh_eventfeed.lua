@@ -6,7 +6,7 @@ module( "eventfeed", package.seeall )
 
 surface.CreateFont( "PropFeed_Name", {
 	font = "KG Shake it Off Chunky",
-	extended = false,
+	extended = true,
 	size = ScreenScale(12),
 	weight = 500,
 	blursize = 0,
@@ -24,7 +24,7 @@ surface.CreateFont( "PropFeed_Name", {
 
 surface.CreateFont( "PropFeed_Generic1", {
 	font = "KG Shake it Off Chunky",
-	extended = false,
+	extended = true,
 	size = ScreenScale(10),
 	weight = 100,
 	blursize = 0,
@@ -42,7 +42,7 @@ surface.CreateFont( "PropFeed_Generic1", {
 
 surface.CreateFont( "PropFeed_Numeric", {
 	font = "KG Shake it Off Chunky",
-	extended = false,
+	extended = true,
 	size = ScreenScale(25),
 	weight = 500,
 	blursize = 0,

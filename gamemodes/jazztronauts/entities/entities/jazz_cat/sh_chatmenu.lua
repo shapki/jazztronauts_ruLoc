@@ -119,13 +119,15 @@ surface.CreateFont( "JazzDialogAsk", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = 32,
 	weight	= 500,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 surface.CreateFont( "JazzDialogOption", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = 40,
 	weight	= 500,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 

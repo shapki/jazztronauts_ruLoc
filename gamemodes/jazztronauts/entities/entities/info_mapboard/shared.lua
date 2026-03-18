@@ -25,14 +25,16 @@ surface.CreateFont( "SmallHeaderFont", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = 48,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 surface.CreateFont( "SelectMapFont", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = 130,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 function ENT:DrawTranslucent()

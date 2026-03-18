@@ -5,7 +5,7 @@ ENT.RenderGroup	= RENDERGROUP_TRANSLUCENT
 local AttentionMarker = Material("materials/ui/jazztronauts/wtf.png", "smooth")
 surface.CreateFont("BlackShardDoorCount", {
 	font = "Palatino Linotype",
-	extended = false,
+	extended = true,
 	size = 50,
 	weight = 500,
 	antialias = false,

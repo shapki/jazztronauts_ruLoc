@@ -1,7 +1,7 @@
 "jazztronauts"
 {
 	"base"			"sandbox"
-	"title"			"Jazztronauts"
+	"title"			"Джазтронавты"
 	"menusystem" 	"1"
 	"maps" 			"jazz_bar"
 	"category"		"pve"

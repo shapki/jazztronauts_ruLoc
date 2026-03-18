@@ -97,19 +97,22 @@ surface.CreateFont( "FactScreenFont", {
 	font	  = "VCR OSD Mono",
 	size	  = 35,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 surface.CreateFont( "FactScreenTitle", {
 	font	  = "VCR OSD Mono",
 	size	  = 55,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 surface.CreateFont( "FactScreenError", {
 	font	  = "VCR OSD Mono",
 	size	  = 25,
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 
 -- Render a test pattern that actually fits on these monitors
@@ -208,7 +211,7 @@ end
 local function loadOwner(rt, f)
 	steamworks.RequestPlayerInfo(f.fact, function(name)
 		f.fact = name or f.fact
-		renderFact(rt, f, "Owner")
+		renderFact(rt, f, "Создатель")
 	end )
 end
 

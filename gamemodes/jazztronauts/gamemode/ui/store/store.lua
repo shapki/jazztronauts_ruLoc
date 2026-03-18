@@ -45,26 +45,30 @@ surface.CreateFont( "JazzStoreName", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = ScreenScale(15),
 	weight	= 700,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 surface.CreateFont( "JazzUpgradeName", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = ScreenScale(12),
 	weight	= 500,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 surface.CreateFont( "JazzStoreDescription", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = ScreenScale(8),
 	weight	= 500,
-	antialias = true
+	antialias = true,
+	extended = true
 })
 surface.CreateFont( "JazzUpgradePrice", {
 	font	  = "KG Shake it Off Chunky",
 	size	  = ScreenScale(9),
 	weight	= 500,
 	antialias = true,
-	strikethrough = true
+	strikethrough = true,
+	extended = true
 })
 
 -- Adds a new styled button, hooked up for purchasin'

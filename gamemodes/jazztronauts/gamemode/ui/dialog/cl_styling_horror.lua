@@ -4,7 +4,7 @@ local top = ScreenScale(100)
 
 surface.CreateFont( "JazzDialogGimmickFont", {
 	font = "Palatino Linotype",
-	extended = false,
+	extended = true,
 	size = ScreenScale(20),
 	weight = 500,
 	antialias = false,
