@@ -1,7 +1,7 @@
 -- Fix loading screen not correctly getting reset when switching out of jazztronauts
 
 local jazz_var = "sv_loadingurl"
-local jazz_urls = { "host.foohy.net", "foohy.github.io" }
+local jazz_urls = { "shapki.github.io", "host.foohy.net", "foohy.github.io" }
 
 local WORKSHOP_CACHE_PATH = "jazztronauts/cache"
 

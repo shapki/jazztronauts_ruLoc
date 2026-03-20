@@ -29,7 +29,7 @@ AddCSLuaFile( "cl_hud.lua" )
 
 util.AddNetworkString("shard_notify")
 
-local LOADING_SCREEN_URL = "http://foohy.github.io/jazztronauts"
+local LOADING_SCREEN_URL = "https://shapki.github.io/jazztronauts_ruLoc"
 
 concommand.Add( "jazz_test_lzma", function()
 
