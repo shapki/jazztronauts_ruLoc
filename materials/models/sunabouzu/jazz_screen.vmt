@@ -1,5 +1,0 @@
-"VertexlitGeneric"
-{
-	"$basetexture" "tools/toolsblack"
-	$nocull 1
-}

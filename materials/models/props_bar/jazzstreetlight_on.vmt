@@ -1,6 +1,0 @@
-"VertexlitGeneric"
-{
-	"$basetexture" "models/props_bar/jazz_streetlight_on"
-	"$selfillum" 1
-	"$selfillumtint"	"[3 0 0]"
-}

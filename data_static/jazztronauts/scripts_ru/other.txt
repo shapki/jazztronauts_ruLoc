@@ -1,5 +1,0 @@
-CHARACTER = UrMom
-
-fuck:
-	Ты облажался 10-кратно
-	&exit
