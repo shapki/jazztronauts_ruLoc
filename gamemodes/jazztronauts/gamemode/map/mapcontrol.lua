@@ -1,19 +1,19 @@
 
 module( 'mapcontrol', package.seeall )
-local defaultMapHost = "http://jazz.foohy.net/addons.txt"
+local defaultMapHost = "https://raw.githubusercontent.com/Foohy/jazztronauts/refs/heads/master/data_static/jazztronauts/addons.txt"
 local defaultAddonList = "data_static/jazztronauts/addons.txt"
 local overrideAddonCache = "jazztronauts/addons_override.txt"
 
 local fallbackVersion = VERSION < 210618 -- Maps unmounted fixed in gmod dev branch version 210618. Before that, fallback to local addons/maps instead
 
-local includeExternal = CreateConVar("jazz_include_external", 1, FCVAR_ARCHIVE, "Whether or not to include an external addon host. Used for searching all of workshop")
-local includeLocalAddons = CreateConVar("jazz_include_localaddon", 0, FCVAR_ARCHIVE, "Whether or not to include maps from locally installed addons. ")
-local includeLocalMaps = CreateConVar("jazz_include_localmap", 0, FCVAR_ARCHIVE, "Whether or not to include local loose maps in the maps folder.")
+local includeExternal = CreateConVar("jazz_include_external", 1, FCVAR_ARCHIVE, "Включать ли внешний хост дополнений. Используется для поиска по всему содержимому мастерской")
+local includeLocalAddons = CreateConVar("jazz_include_localaddon", 0, FCVAR_ARCHIVE, "Включать ли карты из локальных дополнений.")
+local includeLocalMaps = CreateConVar("jazz_include_localmap", 0, FCVAR_ARCHIVE, "Включать ли локальные карты в папку с картами.")
 
 local includeExternalHost = CreateConVar("jazz_include_external_host", defaultMapHost, FCVAR_ARCHIVE,
-	   "Override the source of what random maps to pull from.\n"
-	.. "Can be either a URL to a text file, listing each workshop addon by id\n"
-	.. "Or a workshop collection ID itself.")
+	   "Переопределяет источник, из которого будут браться случайные карты.\n"
+	.. "Это может быть либо ссылка на текстовый файл с IDшниками аддонов из мастерской\n"
+	.. "Или ID коллекции в мастерской.")
 
 concommand.Add("jazz_clear_cache", function()
 	ClearCache()
@@ -35,7 +35,7 @@ if file.Find("lua/bin/gmsv_workshop_*.dll", "GAME")[1] ~= nil then
 	server_ugc = true
 else
 	if game.IsDedicated() then
-		print("If you want to use ugc maps on a deticated server please install gmsv_workshop! | https://github.com/WilliamVenner/gmsv_workshop")
+		print("Если вы хотите использовать ugc карты на выделенном сервере, пожалуйста, установите gmsv_workshop! | https://github.com/WilliamVenner/gmsv_workshop")
 	end
 end
 
@@ -213,13 +213,13 @@ if SERVER then
 			end
 
 			-- Try mounting
-			print("Addon downloaded, decompressing and mounting...")
+			print("Аддон загружен, распаковка и монтирование...")
 			local time = SysTime()
 			local s, files = game.MountGMA(filepath)
-			print("Mounting: " .. (SysTime() - time) .. " seconds.")
+			print("Монтирование: " .. (SysTime() - time) .. " сек.")
 
 			if s and files then
-				print("CONTENT MOUNTED!!!")
+				print("КОНТЕНТ СМОНТИРОВАН!!!")
 				--PrintTable(files)
 			end
 
@@ -232,10 +232,10 @@ if SERVER then
 				PostDownload(filepath, errmsg)
 			end, decompFunc)
 		else
-			print("Downloading Via UGC!")
+			print("Загрузка через UGC!")
 			steamworks.DownloadUGC(wsid, function(filepath, file)
-				print("UGC Download Success!")
-				PostDownload(filepath, "Failed to download addon: UGC download failed.")
+				print("Загрузка UGC успешна!")
+				PostDownload(filepath, "Ошибка загрузки дополнения: UGC загрузка провалилась.")
 			end, decompFunc)
 		end
 	end
@@ -295,11 +295,11 @@ if SERVER then
 		-- If it's different then respect that decision though, but on fallback gmod versions external maps won't work
 		local fallbackLocalOnly = fallbackVersion and includeExternal:GetBool()
 		if fallbackLocalOnly then
-			print("=====================\n JAZZTRONAUTS IS USING FALLBACK SETTINGS DUE TO CURRENT GMOD VERSION LIMITATIONS")
+			print("=====================\n ДЖАЗТРОНАВТЫ ИСПОЛЬЗУЮТ РЕЗЕРВНЫЕ НАСТРОЙКИ ИЗ-ЗА ОГРАНИЧЕНИЙ ТЕКУЩЕЙ ВЕРСИИ GMOD")
 		end
 		if includeExternal:GetBool() and not fallbackLocalOnly then
 			local addonTask = task.NewCallback(function(done)
-				http.Fetch(includeExternalHost:GetString(), done, function(err) ErrorNoHalt("Failed to get latest addons.txt list!\n" .. err .. "\n") done() end)
+				http.Fetch(includeExternalHost:GetString(), done, function(err) ErrorNoHalt("Ошибка получения последнего списка addons.txt!\n" .. err .. "\n") done() end)
 			end )
 			local addonsStr = task.Await(addonTask)
 
