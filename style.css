@@ -92,30 +92,6 @@ body, html {
     font-weight: 300;
 }
 
-.loading-status {
-    position: absolute;
-    right: 4vh;
-    bottom: 4vh;
-    text-align: right;
-    background: var(--glass);
-    padding: 1.5vh 2.5vh;
-    border-radius: 1vh;
-    border-right: 0.5vh solid var(--purple);
-}
-
-.loading-status span {
-    font-size: 4vh;
-    font-weight: bold;
-    color: var(--white);
-}
-
-.loading-status p {
-    margin: 0;
-    font-size: 1.5vh;
-    color: var(--gold);
-    text-transform: uppercase;
-}
-
 .credits {
     position: absolute;
     bottom: 2vh;
