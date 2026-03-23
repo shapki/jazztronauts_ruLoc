@@ -15,119 +15,121 @@ spawngang() # SETUP
 *setcam setpos -13731.064453 -2133.894043 1013.371338;setang -10.711855 -53.004662 0.000000*
 *txin*
 *show .4*
-Still*bgmplay sound/jazztronauts/music/events/pocket.mp3 1.0 2.0* no sign of that prop snatcher,% eh?%%%
-*setskin cat_bar 2*Ah well.%%*setskin cat_bar 0* It happens.
+До сих пор*bgmplay sound/jazztronauts/music/events/pocket.mp3 1.0 2.0* нет следов похитителя пропов,% да?%%%
+*setskin cat_bar 2*Ну ладно.%%*setskin cat_bar 0* Всякое бывает.
 &begin2
 
 begin2:
 *setspeaker cat_piano*
 *setskin cat_piano 4*
-Yes%, it happens.%%
-And each time*setcam setpos -13561.711914 -2139.091064 1050.501587;setang 4.441590 -96.009224 0.000000* it's The Cellist who loses them.*setskin cat_piano 0*%*setanim cat_piano gesture_facepalm 1 idle*%%
-I wonder why.
+Да%, всякое.%%
+И каждый раз*setcam setpos -13561.711914 -2139.091064 1050.501587;setang 4.441590 -96.009224 0.000000* их теряет Виолончелист.*setskin cat_piano 0*%*setanim cat_piano gesture_facepalm 1 idle*%%
+Интересно, почему.
 &begin3
 
 begin3:
 *setspeaker cat_cello*
 *setcam setpos -13559.854492 -2171.333984 1038.833496;setang -1.757542 -41.924026 0.000000*
 *setanim cat_cello gesture_shrug 1 idle*
-%same
+%мне тоже
 &begin4
 
 begin4:
 *setspeaker cat_piano*
 *setcam setpos -13571.149414 -2157.019287 1042.542480;setang 9.023558 -135.240448 0.000000*
-*setskin cat_piano 2*That*setanim cat_piano gesture_anger 1 idle* was rhet-
+*setskin cat_piano 2*Это*setanim cat_piano gesture_anger 1 idle* был рето-
 &begin5
 
 begin5:
 *setspeaker narrator*
 *setcam setpos -13609.158203 -1964.928223 1061.693237;setang 9.233204 -80.556320 0.000000*
->The Pianist pauses.%*setskin cat_piano 0*%*setskin cat_cello 1*% She visibly tries*setskin cat_piano 4* to calm herself
-as The Cellist's grin grows wider%%%,*setskin cat_piano 2* then snaps anyway.
+> Пианистка делает паузу.%*setskin cat_piano 0*%*setskin cat_cello 1*% Она явно пытается*setskin cat_piano 4* успокоиться,
+в то время как улыбка Виолончелиста становится шире%%%*setskin cat_piano 2*, а затем
+всё равно срывается.
 &begin6
 
 begin6:
 *setspeaker cat_piano*
 *setcam setpos -13571.149414 -2157.019287 1042.542480;setang 9.023558 -135.240448 0.000000*
 *setanim cat_piano gesture_shock 1 idle*
-MAKING JOKES ABOUT BEING THE PROBLEM 
-DOESN'T*setanim cat_piano gesture_anger 1 idle* MAKE YOU NOT THE PROBLEM.%%%%*setskin cat_piano 0*
-If we had five wheels,%% you'd be the sixth.
+ШУТКИ О ТОМ, ЧТО ТЫ ЯКОБЫ ПРОБЛЕМА,
+НЕ ПЕРЕСТАЮТ*setanim cat_piano gesture_anger 1 idle* ДЕЛАТЬ ТЕБЯ ПРОБЛЕМОЙ.%%%%*setskin cat_piano 0*
+Если бы у нас было пять колёс,%% ты был бы шестым.
 &begin7
 
 begin7:
 *setspeaker cat_cello*
 *setcam setpos -13559.854492 -2171.333984 1040.833496;setang -1.757542 -41.924026 0.000000*
-ohhhh hell *setanim cat_cello gesture_laugh 1 idle*yeah some motherfuckers trying to serve up a
-plate of beef carpaccio in my house%%*setskin cat_cello 2*, better*setanim cat_cello gesture_jab 1 idle* saddle up
-cause its about to get real salty in here
+оооо да *setanim cat_cello gesture_laugh 1 idle*какие-то ублюдки хотят подать на стол карпачо из говядины
+в моём доме%*setskin cat_cello 2*, седлайте*setanim cat_cello gesture_jab 1 idle* коней ведь сейчас здесь станет
+по-настоящему жарко
 &begin8
 
 begin8:
 *setspeaker cat_cello*
-*setskin cat_cello 0*%hey%% remember that*setanim cat_cello gesture_jab 1 idle* time you accidentally tore a player in
-half trying to save them from a combine apc that didnt even
-have player collision enabled
+*setskin cat_cello 0*%эй%% помнишь когда*setanim cat_cello gesture_jab 1 idle* ты случайно разорвала игрока пополам, 
+пытаясь спасти его от бтр комбайна, у к которого даже не была
+включена коллизия с игроками
 &begin11
 
 begin11:
 *setspeaker cat_piano*
 *setcam setpos -13571.149414 -2157.019287 1050.542480;setang 9.023558 -135.240448 0.000000*
-*setskin cat_piano 2*Fuck you%,*setanim cat_piano gesture_anger 1 idle* that doesn't count.%%*setskin cat_piano 0* That happened years ago when
-we had barely*setanim cat_piano gesture_shrug 1 idle* any idea how this shitty game engine works.
+*setskin cat_piano 2*Иди нахуй%,*setanim cat_piano gesture_anger 1 idle* это не считается.%%*setskin cat_piano 0* Это было много лет назад,
+когда мы*setanim cat_piano gesture_shrug 1 idle* почти не представляли, как работает этот дерьмовый
+игровой движок.
 &begin12
 
 begin12:
 *setspeaker cat_cello*
 *setcam setpos -13559.854492 -2171.333984 1040.833496;setang -1.757542 -41.924026 0.000000*
-you*setskin cat_cello 2**setanim cat_cello gesture_exchange 1 idle* tore a dude in half trying to get him out of danger
-he was not in because the cars*setskin cat_cello 0*% were ghosts%%%
-you*setskin cat_cello 1* got*setanim cat_cello gesture_clap 1 idle* spooked by ghost cars
+ты*setskin cat_cello 2**setanim cat_cello gesture_exchange 1 idle* разорвала парня пополам пытаясь спасти от опасности
+которой даже не было потому что машины*setskin cat_cello 0*% были призрачными%%%
+тебя*setskin cat_cello 1* напугали*setanim cat_cello gesture_clap 1 idle* призрачные машины
 &begin14
 
 begin14:
 *setspeaker cat_piano*
 *setcam setpos -13571.149414 -2157.019287 1052.542480;setang 9.023558 -135.240448 0.000000*
-Okay fine,% but you somehow managed*setanim cat_piano gesture_disagree 1 idle* to 
-lose a guest in fucking% flatgrass.
+Ладно, ладно,% но ты каким-то образом умудрился*setanim cat_piano gesture_disagree 1 idle* потерять нашего
+гостя на чёртовом% flatgrass.
 &begin15
 
 begin15:
 *setspeaker cat_cello*
 *setcam setpos -13556.934570 -2136.531006 1054.415039;setang 8.544407 -100.501335 0.000000*
-in*setskin cat_cello 0* my*setanim cat_cello gesture_shrug 1 idle* defense i was sober at the time
+в*setskin cat_cello 0* мою*setanim cat_cello gesture_shrug 1 idle* защиту скажу что я тогда был трезв
 &begin16
 
 begin16:
 *setspeaker cat_piano*
-*setanim cat_piano gesture_anger 1 idle*Oh*setskin cat_piano 2* mY GOD
+*setanim cat_piano gesture_anger 1 idle*Ох*setskin cat_piano 2* тЫ БЛЯТЬ
 &begin17
 
 begin17:
 *setspeaker narrator*
 *setcam setpos -13634.369141 -1805.863525 1055.647705;setang 2.375210 -82.293320 0.000000*
->The two*setanim cat_singer singer_survey* cats start shouting wild insults and 
-accusations at each other.%%%
->The Singer looks around%% and looks right at the window...
+> Два*setanim cat_singer singer_survey* кота начинают выкрикивать друг другу 
+дикие оскорбления и обвинения.%%%
+> Певец оглядывается%% и смотрит прямо в окно...
 &begin19
 
 begin19:
-> It appears you've been spotted.
+> Похоже вас заметили.
 &begin20
 
 begin20:
 *setspeaker narrator*
 *setcam setpos -13527.917969 -2076.759033 1042.751953;setang 18.037712 51.332397 0.000000*
->The Singer*setanim cat_singer singer_whistle 1 idle* puts their*setskin cat_singer 1* paw to their mouth*setskin cat_singer 0* and whistles very loudly!%%*setcam setpos -13540.255859 -1953.788574 1055.059326;setang 3.460600 -105.256134 0.000000*
-The two *setanim cat_bar gesture_shock*cats*setskin cat_cello 2**setskin cat_piano 2**setanim cat_piano gesture_shock* stop*setanim cat_cello gesture_shock* arguing immediately and clutch their ears!
+> Певец*setanim cat_singer singer_whistle 1 idle* прикладывает*setskin cat_singer 1* лапу ко рту*setskin cat_singer 0* и очень громко свистит!%%*setcam setpos -13540.255859 -1953.788574 1055.059326;setang 3.460600 -105.256134 0.000000*
+Два *setanim cat_bar gesture_shock*кота*setskin cat_cello 2**setskin cat_piano 2**setanim cat_piano gesture_shock* тут же*setanim cat_cello gesture_shock* прекращают спорить и хватаются за уши!
 &begin21
 
 begin21:
 *setspeaker cat_piano*
 *setcam setpos -13556.934570 -2136.531006 1054.415039;setang 8.544407 -100.501335 0.000000*
-Fuck!% Ow!%*setanim cat_piano gesture_anger* How do you do that so loudly!?%% 
-What!?%% What do you want!?!?
+Блять!% Ох!%*setanim cat_piano gesture_anger* Как ты это делаешь так громко!?%% 
+Что!?%% Что тебе надо!?!?
 &begin22
 
 begin22:
@@ -137,39 +139,40 @@ begin22:
 *setposang cat_piano setpos -13656.136719 -2104.135498 1000.031250;setang -90 20.847992 0.000000*
 *setposang cat_singer setpos -13546.133789 -2053.541260 1000.031250;setang -90 33.252113 0.000000*
 *setcam setpos -13634.369141 -1805.863525 1055.647705;setang 2.375210 -82.293320 0.000000*
-*setanim cat_singer gesture_jab 1 idle*>The Singer*setskin cat_piano 0* points*setskin cat_cello 0* frantically*setskin cat_bar 0* in*setskin cat_singer 0* your direction!
+*setanim cat_singer gesture_jab 1 idle*>Певец*setskin cat_piano 0* указывает*setskin cat_cello 0* чётко*setskin cat_bar 0* в*setskin cat_singer 0* вашу сторону!
 %%%
-You've definitely been spotted!
+Вас точно заметили!
 &begin23
 
 begin23:
 *setspeaker cat_bar*
-Ah.*setanim cat_bar gesture_clap 1 idle*% Would*setskin cat_bar 1* you look at what we have here? *setcam setpos -13597.536133 -1903.968750 1056.031250;setang 2.475661 96.035400 0.000000*
+Ах.*setanim cat_bar gesture_clap 1 idle*% Посмотрите*setskin cat_bar 1* кто у нас тут? *setcam setpos -13597.536133 -1903.968750 1056.031250;setang 2.475661 96.035400 0.000000*
 &begin24
 
 begin24:
 *setcam setpos -13689.892578 -2052.613770 1055.993286;setang 2.525014 -122.990868 0.000000*
-Guests!
+Гости!
 &begin25
 
 begin25:
 *setspeaker cat_piano*
 *setcam setpos -13721.875000 -2032.966309 1048.535278;setang 6.028872 -51.775673 0.000000*
-Or competition.%%*setskin cat_piano 1*% You want me to...?
+Или конкуренты.%%*setskin cat_piano 1*% Хочешь, чтобы я...?
 &begin26
 
 begin26:
 *setspeaker cat_bar*
-No,%*setanim cat_bar gesture_disagree 1 idle* no%*setskin cat_bar 0* I've a better idea.%*setanim cat_bar gesture_jab 1 idle*% You there!%% Through the window!%%
-We've a proposition to make.%%%*setcam setpos -13634.369141 -1805.863525 1055.647705;setang 2.375210 -82.293320 0.000000* The end of these tunnels is just*setanim cat_bar gesture_sweep 1 idle* 
-a little ways ahead -% if you'll meet us there,%*setskin cat_bar 1* we'll give you the details.
+Нет,%*setanim cat_bar gesture_disagree 1 idle* нет%*setskin cat_bar 0*, у меня идея получше.%*setanim cat_bar gesture_jab 1 idle*% Эй вы!%% За окном!%%
+У нас есть предложение.%%%*setcam setpos -13634.369141 -1805.863525 1055.647705;setang 2.375210 -82.293320 0.000000* Конец этих туннелей*setanim cat_bar gesture_sweep 1 idle* 
+совсем рядом, % если вы встретитесь с нами там,%*setskin cat_bar 1* мы вам
+всё расскажем.
 &begin27
 
 begin27:
 *setspeaker narrator*
->The*setskin cat_bar 0* Bartender turns*tweencam 3 setpos -13591.134766 -1879.317261 1049.972168;setang 3.453386 99.459183 0.000000* and walks out of view%, 
-the other cats follow after with only a moment's confusion.%%%
+> Бармен*setskin cat_bar 0* поворачивается*tweencam 3 setpos -13591.134766 -1879.317261 1049.972168;setang 3.453386 99.459183 0.000000* и исчезает из виду%, 
+остальные коты следуют за ним, лишь на мгновение растерявшись.%%%
 
-Well, that was weird.%%% Might as well hear what they have to say,% though.%%
-...Right?
+Ну, это было странно.%%% Но всё-же стоит послушать, что они,% скажут.%%
+...Верно?
 &exit

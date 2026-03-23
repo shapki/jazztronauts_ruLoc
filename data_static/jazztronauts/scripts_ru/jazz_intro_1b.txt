@@ -15,62 +15,62 @@ spawngang() # SETUP
 
 *setspeaker narrator*
 *show 0.4*
->A stun baton seems to have fallen from a hole in the ceiling.
+> Похоже, из отверстия в потолке выпала дубинка.
 &begin1
 
 
 begin1:
 *setspeaker cat_piano*
-Nice job,% asshole.%% Can't believe you tripped over a corpse.%%
-How many times have we had to step around dead bodies now?
+Отлично,% придурок.%% Не верится, что ты споткнулся о труп.%%
+Сколько раз нам приходилось обходить мёртвые тела?
 &begin2
 
 begin2:
 *setspeaker cat_cello*
-not as many times as youve had to%%
-i aint the one who busts skulls.%% hell% im probably too 
-blitzed to throw a punch without hitting myself right now
+не так часто как тебе%%
+я не тот кто проламывает черепа.%% чёрт% я наверное сейчас 
+слишком обдолбан чтобы ударить кого-то и самому не получить
+по лицу
 &begin3
 
 begin3: 
 *setspeaker cat_bar*
-I'm stunned.
+Я в шоке.
 &begin4
 
 begin4:
 *setspeaker cat_cello*
-quit being a shitty actor and help me up% jackass
+кончай ломать комедию и помоги мне встать% козёл
 
-%.%.%.%wait%.%.%.% goD DAMNIT
+%.%.%.%погоди%.%.%.% оХ БЛЯТЬ
 &begin5
 
 begin5:
 *setspeaker cat_piano*
-Did you actually hurt yourself?%%
-Hang on, let me break out the medi-
+Ты поранился?%%
+Погоди, дай мне достать меди-
 &begin6
 
 begin6:
 *setspeaker cat_cello*
-i dropped my prop snatcher down the fuckin grate
+я уронил свой похититель пропов в чёртову решётку
 &begin7
 
 begin7:
 *setspeaker cat_bar*
-Oh dear.%% We'd best find a way down, then.
+О боже.%% Тогда нам лучше найти способ спуститься вниз.
 &begin8
 
 begin8:
 *setspeaker cat_piano*
-We'd better.%% Things ain't cheap.%%
-C'mon dumbass,% let's go.
+Лучше да.%% Это не дешёвая хрень.%%
+Давай, идиот,% пошли.
 &begin9
 
 begin9:
 *setspeaker narrator*
->3 sets of footsteps, accompanied by the sound of
-a person being dragged across the floor fades
-away overhead... 
+> 3 пары шагов, сопровождаемые звуком трупа, что тащат по полу,
+затихают над головой...
 &exit
 
 ###### END OF EVENT
