@@ -93,7 +93,20 @@ net.Receive("propcollect", function()
 				{
 					name = function() return IsValid(ply) and ply:Nick() or "<player>" end, 
 					count = function() return IsValid(ply)and ply.streakcount or 0 end,
-					props = function() return ( IsValid(ply) and ply.streakcount > 1 ) and JazzLocalize("jazz.message.props") or JazzLocalize("jazz.message.prop") end,
+					props = function()
+						if not IsValid(ply) then return JazzLocalize("jazz.message.prop") end
+						local count = ply.streakcount or 0
+						local rest = count % 10
+						local rest100 = count % 100
+
+						if rest == 1 and rest100 != 11 then
+							return JazzLocalize("jazz.message.prop")
+						elseif (rest >= 2 and rest <= 4) and (rest100 < 10 or rest100 >= 20) then
+							return JazzLocalize("jazz.message.props2")
+						else
+							return JazzLocalize("jazz.message.props")
+						end
+					end,
 				}
 			)
 			:Body("%total", 

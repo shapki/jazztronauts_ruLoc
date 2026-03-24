@@ -73,7 +73,7 @@ local BGW, BGH = ScreenScaleEx(500, 90)
 local DialogColor = Color(64, 38, 49, 255)
 
 
-local CatW, CatH = ScreenScaleEx(150, 170)
+local CatW, CatH = ScreenScaleEx(150, 220)
 local CatCamOffset = Vector(-35, 60, 0):GetNormal() * 70
 
 -- Local view camera offsets for specific models
@@ -161,10 +161,12 @@ local function RenderEntityCutIn(ent, x, y, w, h)
 	bone = bone or ent:LookupBone("Head")
 	bone = bone or ent:LookupBone("rig_cat:j_head")
 
+	local isPly = isPlayer(ent)
+
 	if bone and ent:GetBonePosition(bone) != ent:GetPos() then
 		headpos = ent:GetBonePosition(bone)
-	elseif isPlayer(ent) then
-		headpos = ent:GetPos() + entangs:Up() * 60
+	elseif isPly then
+		headpos = ent:GetPos() + entangs:Up() * 64
 	end
 
 	-- Apply additional offsets if necessary
@@ -179,9 +181,12 @@ local function RenderEntityCutIn(ent, x, y, w, h)
 	local ang = (headpos - pos):Angle()
 
 	renderPlayerCutIn = ent == LocalPlayer()
-	cam.Start3D(pos, ang, 25, x, y, w, h)
+	
+	local fov = isPly and 35 or 25
+
+	cam.Start3D(pos, ang, fov, x, y, w, h)
 		render.SetColorModulation(1, 1, 1)
-		if isPlayer(ent) then
+		if isPly then
 			drawPlayer(ent)
 		else
 			ent.NoFollowPlayer = true
@@ -502,19 +507,46 @@ hook.Add("Think", "JazzDialogSkipListener", function()
 	keyOverrides = keyOverrides and string.Replace(keyOverrides, " ", "")
 	keyOverrides = keyOverrides and string.Split(keyOverrides, ",")
 
+	if not dialog.IsInDialog() then 
+		wasSkipPressed = false
+		return 
+	end
+
 	local skip = AnyKeysDown(keyOverrides or DefaultKeys)
 
-	-- Prevents skipping if not focused properly
-	if not dialog.GetParam("HIDE_MOUSE") and
-		IsValid(DialogFrame) and not DialogFrame:IsChildHovered() and not vgui.IsHoveringWorld() then
-		return
+	-- ESC Focus - Mouse Fix
+	if IsValid(DialogFrame) and not dialog.GetParam("HIDE_MOUSE") then
+		if not vgui.CursorVisible() then
+			DialogFrame:MakePopup()
+			DialogFrame:SetMouseInputEnabled(true)
+			DialogFrame:SetKeyboardInputEnabled(false)
+		end
 	end
+
+	-- ESC Focus - Keyboard Fix
+	local isMouseAction = false
+	local currentKeys = keyOverrides or DefaultKeys
+	for _, k in pairs(currentKeys) do
+		if string.StartWith(k, "MOUSE") and AnyKeyDown(k) then
+			isMouseAction = true
+			break
+		end
+	end
+
+	-- Prevents skipping if not focused properly
+	if isMouseAction then
+		if not dialog.GetParam("HIDE_MOUSE") and IsValid(DialogFrame) then
+			if not DialogFrame:IsChildHovered() and not vgui.IsHoveringWorld() then
+				return
+			end
+		end
+	end
+
 	if skip == wasSkipPressed then return end
 	wasSkipPressed = skip
-	if not dialog.IsInDialog() then return end
-
-	wasSkipPressedInDialog = skip
 	if not skip then return end
+
+	if gui.IsGameUIVisible() or gui.IsConsoleVisible() then return end
 
 	-- First try to continue to the next page of dialog
 	if not dialog.Continue() then

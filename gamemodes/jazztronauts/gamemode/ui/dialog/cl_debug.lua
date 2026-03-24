@@ -19,14 +19,14 @@ end
 concommand.Add("jazz_debug_runscript", function(ply, cmd, args)
 	local script = args[1]
 	if dialog.IsReady() and not dialog.IsScriptValid(script) then
-		print("Invalid script \"" .. script .. "\"!")
+		print("Некорректный скрипт \"" .. script .. "\"!")
 		return
 	end
 
 	local npcid = tonumber(args[2])
 	local npc = npcid and FindNPCByID(npcid)
 	if npcid and not IsValid(npc) then
-		print("Failed to find NPC with ID " .. npcid)
+		print("Ошибка поиска НИПА с ID " .. npcid)
 		return
 	end
 

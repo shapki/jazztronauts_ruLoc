@@ -3,12 +3,12 @@ begin1:
 	spawngang()
 	*setposang cat_bar -2864.620361 3044.558594 32;setang -90 180 0*
 	*setspeaker cat_bar*
-    Good work! You've located some shards.
+	Отличная работа! Ты нашёл несколько частиц.
     &begin1_2
 
 begin1_2:
-    You'll see these glowing wizardly interdimensional sugar crystals
-    peppered all over maps everyone has made. 
+    Ты увидишь эти светящиеся, волшебные, межпространственные 
+	кристаллы сахара, разбросанные по всем картам.
     &begin1_3
 
 begin1_3:

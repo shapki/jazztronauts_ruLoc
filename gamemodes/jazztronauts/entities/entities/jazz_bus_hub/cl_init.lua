@@ -19,7 +19,7 @@ surface.CreateFont( "SteamCommentFont", {
 })
 
 surface.CreateFont( "SteamAuthorFont", {
-	font	  = "Dancing Script",
+	font	  = "Dancing Script Regular",
 	size	  = 65,
 	weight	= 700,
 	antialias = true,
@@ -27,7 +27,7 @@ surface.CreateFont( "SteamAuthorFont", {
 })
 
 surface.CreateFont( "JazzDestinationFont", {
-	font	  = "Dancing Script",
+	font	  = "Dancing Script Regular",
 	size	  = 53,
 	weight	= 700,
 	antialias = true,

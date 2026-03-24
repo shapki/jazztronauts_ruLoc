@@ -18,7 +18,7 @@ function ENT:Initialize()
 end
 
 function ENT:UpdateDestinationMaterial()
-	JazzRenderDestinationMaterial(self, "the bar")
+	JazzRenderDestinationMaterial(self, "бар")
 end
 
 function ENT:StartLaunchEffects()

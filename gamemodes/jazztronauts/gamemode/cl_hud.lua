@@ -27,14 +27,14 @@ local catcoin = Material("materials/ui/jazztronauts/catcoin.png", "smooth")
 
 surface.CreateFont( "JazzNote",
 {
-	font		= "KG Shake it Off Chunky Mono",
+	font		= "KG Shake it Off Chunky", // KG Shake it Off Chunky Mono
 	size		= ScreenScale(20),
 	weight		= 1500,
 	extended	= true
 })
 surface.CreateFont( "JazzNoteFill",
 {
-	font		= "KG Shake it Off Chunky Mono",
+	font		= "KG Shake it Off Chunky", // KG Shake it Off Chunky Mono
 	size		= ScreenScale(12),
 	weight		= 500,
 	antialias	= true,
