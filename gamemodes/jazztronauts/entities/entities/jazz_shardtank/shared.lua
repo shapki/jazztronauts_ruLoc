@@ -269,19 +269,48 @@ else
 		//self.AnimShardCount = math.Approach(self.AnimShardCount, self:GetCollectedShards(), 1)
 	end
 
-	function ENT:DrawRTScreen()
+function ENT:DrawRTScreen()
 		screen_rt:Render(function()
 			local c = HSVToColor(math.fmod(CurTime() * 40, 360), 0.8, 0.5)
 			local collected = self:GetCollectedShardCount()
 			render.Clear(c.r, c.g, c.b, 255)
 			cam.Start2D()
-				local ctext =  JazzLocalize("jazz.tank.shard"..(collected ~= 1 and "s" or ""),collected)
-				local ntext =  JazzLocalize("jazz.tank.need",mapgen.GetTotalRequiredShards())
+				local lastDigit = collected % 10
+				local lastTwoDigits = collected % 100
+				local suffix = "shards"
+
+				if lastTwoDigits < 11 or lastTwoDigits > 14 then
+					if lastDigit == 1 then
+						suffix = "shard"
+					elseif lastDigit >= 2 and lastDigit <= 4 then
+						suffix = "shards2"
+					end
+				end
+
+				local ctext = JazzLocalize("jazz.tank." .. suffix, collected)
+				local ntext = JazzLocalize("jazz.tank.need", mapgen.GetTotalRequiredShards())
+				
 				if newgame.GetGlobal("ended") then
 					ntext = JazzLocalize("jazz.tank.newgameplus")
 				end
 
-				draw.SimpleText(ctext, "JazzShardTankFont", sizeX / 2, sizeY / 2, color_white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+				surface.SetFont("JazzShardTankFont")
+				local tw, th = surface.GetTextSize(ctext)
+				local maxWidth = sizeX * 0.9
+				
+				local mat = Matrix()
+				if tw > maxWidth then
+					local scale = maxWidth / tw
+					mat:Scale(Vector(scale, 1, 1))
+					mat:Translate(Vector((sizeX / 2) * (1 / scale) - (tw / 2), sizeY / 2, 0))
+				else
+					mat:Translate(Vector(sizeX / 2 - tw / 2, sizeY / 2, 0))
+				end
+
+				cam.PushModelMatrix(mat)
+					draw.SimpleText(ctext, "JazzShardTankFont", 0, 0, color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+				cam.PopModelMatrix()
+
 				draw.SimpleText(ntext, "JazzShardTankSubtextFont", sizeX / 2, sizeY / 1.5, color_white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 			cam.End2D()
 		end)

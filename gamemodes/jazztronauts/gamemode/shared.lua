@@ -136,8 +136,6 @@ else
 
 	net.Receive( "death_notice", function()
 
-		print("DEATH NOTICE MESSAGE!")
-
 		local ply = net.ReadEntity()
 		local attacker = net.ReadEntity()
 		local inflictor = net.ReadEntity()
@@ -145,35 +143,72 @@ else
 
 		local name = IsValid(ply) and ply:Nick() or "<Player>"
 		local ev = eventfeed.Create()
+		
+		local title = ""
+		local data = { name = name }
+		local format = {}
 
+		-- Определение текста смерти
 		if dmg == DMG_FALL then
-
-			ev:Title(JazzLocalize("jazz.death.fall","%name"), 
-				{ name = name }
-			)
-
+			title = JazzLocalize("jazz.death.fall","%name")
 		elseif attacker == ply then
-
-			ev:Title(JazzLocalize("jazz.death.self","%name"), 
-				{ name = name }
-			)
-
+			title = JazzLocalize("jazz.death.self","%name")
 		elseif IsValid(attacker) then
-
-			ev:Title(JazzLocalize("jazz.death.killer","%name","%killer"), 
-				{ name = name, killer = attacker:GetClass() },
-				{ killer = "red_name" }
-			)
-
+			local killerName = attacker:IsPlayer() and attacker:Nick() or attacker:GetClass()
+			title = JazzLocalize("jazz.death.killer","%name","%killer")
+			data.killer = killerName
+			format.killer = "red_name"
 		else
-
-			ev:Title(JazzLocalize("jazz.death.generic","%name"), 
-				{ name = name }
-			)
-
+			title = JazzLocalize("jazz.death.generic","%name")
 		end
 
+		-- Подготовка текста для замера (заменяем плейсхолдеры реальными значениями)
+		local fullText = string.gsub(title, "%%name", name)
+		if data.killer then
+			fullText = string.gsub(fullText, "%%killer", data.killer)
+		end
+
+		-- Замеряем ширину текста используя гарантированный шрифт
+		surface.SetFont("JazzDialogFont")
+		local tw, _ = surface.GetTextSize(fullText)
+		
+		-- Устанавливаем иконку модели
+		local iconModel = Model("models/Gibs/HGIBS.mdl") -- Череп по умолчанию
+		
+		if IsValid(inflictor) then
+			if inflictor:IsWeapon() then
+				local worldModel = inflictor:GetModel()
+				if worldModel and worldModel != "" then
+					iconModel = worldModel
+				end
+			elseif not inflictor:IsPlayer() then
+				local propModel = inflictor:GetModel()
+				if propModel and propModel != "" then
+					iconModel = propModel
+				end
+			end
+		end
+
+		-- Применяем параметры к эвенту
+		ev:Title(title, data, format)
+		ev:SetIconModel(iconModel)
 		ev:SetHighlighted( ply == LocalPlayer() )
+
+		-- Хак: пробуем выставить ширину через внутреннюю переменную, если SetWidth не срабатывает напрямую
+		local finalWidth = tw + 180
+		if ev.SetWidth then 
+			ev:SetWidth(finalWidth) 
+		else
+			ev.Width = finalWidth -- Прямая запись, если метод не виден
+		end
+
+		-- Дополнительный таймер для форсированного обновления ширины после инициализации эвента
+		timer.Simple(0, function()
+			if IsValid(ev) and ev.SetWidth then
+				ev:SetWidth(finalWidth)
+			end
+		end)
+
 		ev:Dispatch( 10, "top" )
 
 	end )

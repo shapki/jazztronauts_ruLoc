@@ -100,10 +100,23 @@ end
 
 local function ProgressString(col, total)
 	if col == total then
-		return JazzLocalize("jazz.shards.all",total)
+		local lastDigit = total % 10
+		local lastTwoDigits = total % 100
+		
+		local localizationKey = "jazz.shards.all2"
+		
+		if lastTwoDigits < 11 or lastTwoDigits > 14 then
+			if lastDigit == 1 then
+				localizationKey = "jazz.shards.all" 
+			elseif lastDigit >= 2 and lastDigit <= 4 then
+				localizationKey = "jazz.shards.all"
+			end
+		end
+
+		return JazzLocalize(localizationKey, total)
 	end
 
-	return JazzLocalize("jazz.shards.partial",col,total)
+	return JazzLocalize("jazz.shards.partial", col, total)
 end
 
 -- HOLY FUCK MAKE THESE INHERIT ALREADY
@@ -112,15 +125,20 @@ function JazzRenderDestinationMaterial(self, dest)
 		cam.Start2D()
 			surface.SetDrawColor(HSVToColor(RealTime() * 20 % 360, .7, 0.4))
 			surface.DrawRect(0, 0, destRTWidth, destRTHeight)
+			
 			surface.SetFont("JazzDestinationFont")
 			local w, h = surface.GetTextSize(dest)
-			local mwidth = destRTWidth
+			local mwidth = destRTWidth - 20
+			
 			local mat = Matrix()
+			
 			if w > mwidth then
-				mat:Scale(Vector(mwidth/w, 1, 1))
-
+				local scale = mwidth / w
+				mat:Scale(Vector(scale, 1, 1))
+				
+				mat:Translate(Vector(10, 0, 0))
 			else
-				mat:Translate(Vector(mwidth/2 - w/2, 0, 0))
+				mat:Translate(Vector(destRTWidth / 2 - w / 2, 0, 0))
 			end
 
 			cam.PushModelMatrix(mat)

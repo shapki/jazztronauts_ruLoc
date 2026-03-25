@@ -193,15 +193,30 @@ local function DrawShardCount()
 	if GAMEMODE:IsWaitingForPlayers() then return end
 
 	local left, total = mapgen.GetShardCount()
-	local str = JazzLocalize("jazz.shards.partialcollected",total - left,total)
+	local str = JazzLocalize("jazz.shards.partialcollected", total - left, total)
 	local color = Color(143, 0, 255, 100)
+
 	if left == 0 then
-		str = JazzLocalize("jazz.shards.all",total)
+		local lastDigit = total % 10
+		local lastTwoDigits = total % 100
+		
+		local localizationKey = "jazz.shards.all2"
+		
+		if lastTwoDigits < 11 or lastTwoDigits > 14 then
+			if lastDigit == 1 then
+				localizationKey = "jazz.shards.all" 
+			elseif lastDigit >= 2 and lastDigit <= 4 then
+				localizationKey = "jazz.shards.all"
+			end
+		end
+
+		str = JazzLocalize(localizationKey, total)
 		color = HSVToColor(math.fmod(CurTime() * 360, 360), .3, .7)
 	end
 
 	surface.SetFont("JazzNote")
-	local offset = surface.GetTextSize(str) / 2
+	local tw, th = surface.GetTextSize(str)
+	local offset = tw / 2
 	offset = offset + 5
 	draw.WordBox( 5, ScrW() / 2 - offset, 5, str, "JazzNote", color, color_white )
 

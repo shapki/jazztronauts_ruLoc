@@ -112,7 +112,7 @@ function SCOREBOARD:Init()
         draw.SimpleText(hostName, "JazzScoreboardHeader", startX, h * 0.15, CLR_GOLD, TEXT_ALIGN_LEFT)
         
         surface.SetFont("JazzScoreboardSub")
-        local label = "Карта: "
+        local label = JazzLocalize("jazz.hud.scoreboard.map") .. " "
         local mapName = game.GetMap()
         local lw, _ = surface.GetTextSize(label)
         draw.SimpleText(label, "JazzScoreboardSub", startX, h * 0.55, CLR_PINK, TEXT_ALIGN_LEFT)
@@ -124,9 +124,9 @@ function SCOREBOARD:Init()
     self.Cols:SetHeight(25)
     self.Cols:DockMargin(0, 10, 0, 0)
     self.Cols.Paint = function(p, w, h)
-        draw.SimpleText("ИГРОК", "JazzScoreboardSub", 15, h/2, CLR_GOLD, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
-        draw.SimpleText("СМЕРТИ", "JazzScoreboardSub", w * 0.75, h/2, CLR_GOLD, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
-        draw.SimpleText("ПИНГ", "JazzScoreboardSub", w - 15, h/2, CLR_GOLD, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
+        draw.SimpleText(JazzLocalize("jazz.hud.scoreboard.player"), "JazzScoreboardSub", 15, h/2, CLR_GOLD, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+        draw.SimpleText(JazzLocalize("jazz.hud.scoreboard.deaths"), "JazzScoreboardSub", w * 0.75, h/2, CLR_GOLD, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+        draw.SimpleText(JazzLocalize("jazz.hud.scoreboard.ping"), "JazzScoreboardSub", w - 15, h/2, CLR_GOLD, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
     end
 
     self.PlayerList = self:Add("DScrollPanel")
@@ -211,9 +211,9 @@ hook.Add("HUDPaint", "graph_test", function()
 	graph.drawPieChart( cx + XOff, YOff * 2.4, Radius, moneyValues, 1-bounce2, 3, function(v) return JazzLocalize("jazz.hud.spent", v[1], v[3]) end )
 	graph.drawPieChart( cx + XOff, YOff * 3.8, Radius, shardValues, 1-bounce2, 2, function(v) return JazzLocalize("jazz.hud.found", v[1], v[2]) end )
 
-    draw.SimpleText("ЗАРАБОТАНО", "JazzScoreboardSub", cx + XOff, YOff - Radius - 30, CLR_GOLD, TEXT_ALIGN_CENTER)
-    draw.SimpleText("ПОТРАЧЕНО", "JazzScoreboardSub", cx + XOff, YOff*2.4 - Radius - 30, CLR_PINK, TEXT_ALIGN_CENTER)
-    draw.SimpleText("ЧАСТИЦЫ", "JazzScoreboardSub", cx + XOff, YOff*3.8 - Radius - 30, CLR_WHITE, TEXT_ALIGN_CENTER)
+    draw.SimpleText(JazzLocalize("jazz.hud.earned.title"), "JazzScoreboardSub", cx + XOff, YOff - Radius - 30, CLR_GOLD, TEXT_ALIGN_CENTER)
+    draw.SimpleText(JazzLocalize("jazz.hud.spent.title"), "JazzScoreboardSub", cx + XOff, YOff*2.4 - Radius - 30, CLR_PINK, TEXT_ALIGN_CENTER)
+    draw.SimpleText(JazzLocalize("jazz.hud.found.title"), "JazzScoreboardSub", cx + XOff, YOff*3.8 - Radius - 30, CLR_WHITE, TEXT_ALIGN_CENTER)
 
 	draw.SimpleText(JazzLocalize("jazz.hud.kys"), "JazzRespawnHint", ScrW()/2, ScrH() - 30, CLR_WHITE, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM)
 end)
